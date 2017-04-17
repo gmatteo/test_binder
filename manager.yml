@@ -7,16 +7,11 @@ hardware:  &hardware
 
 job: &job
    mpi_runner: mpirun
-   #pre_run: "source activate abienv"
+   pre_run: "export OMP_NUM_THREADS=1"
 
 policy:
     autoparal: 1
     #max_ncpus: 2
-    #vars_condition: {"npfft": {"$eq": 1}}
-    #condition: {$and: [ {efficiency: {$gt: 0.99}}, {tot_ncpus: {$divisible: 2}} ]}
-    #autoparal_priorities: [speedup, efficiency, memory]
-    #search_mode: qadapter_first
-    #search_mode: paralleconf_first
 
 qadapters:
   - priority: 1 
