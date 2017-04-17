@@ -1,13 +1,14 @@
 name: example-environment
 
 channels:
-- conda-forge
-- matsci
 - abinit
+- matsci
+- conda-forge
 - defaults
 
 dependencies:
 - nomkl
+- networkx
 - pymatgen
 - abipy
 - abinit
